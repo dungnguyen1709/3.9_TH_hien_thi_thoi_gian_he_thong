@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 @WebServlet(name = "SeverTimeServlet",urlPatterns = "/index")
 public class SeverTimeServlet extends HttpServlet {
@@ -17,5 +18,11 @@ public class SeverTimeServlet extends HttpServlet {
         writer.println("<html>");
         writer.println("<h1>Hello World</h1>");
         writer.println("</html>");
+
+        PrintWriter writer1 = response.getWriter();
+        writer1.println("<html>");
+        Date today = new Date();
+        writer1.println("<h1>" + today + "</h1>");
+        writer1.println("</html");
     }
 }
